@@ -39,7 +39,8 @@
 
 .product > button{
     background:#f0c14b ;
-    border: 1px solid #a88734 #9c7e31 #846a29;
+    border: 1px solid ;
+    border-color: #a88734 #9c7e31 #846a29;
     margin-top: 10px;
     color: #111;
 }
