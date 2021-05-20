@@ -1,0 +1,200 @@
+
+body{
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background: white;
+}
+
+.login__logo{
+    width:100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    object-fit: contain;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.login__signInButton{
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+    border:1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+    border-radius: 3px;
+    width: 100%;
+    cursor: pointer;
+    vertical-align: middle;
+    line-height: 19px;
+    box-sizing: border-box;
+    padding: 1px 6px;
+    height: 29px;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 40%) inset;
+    margin-bottom: 18px;
+
+}
+
+.login__signInButton:hover{
+    /* background:#f7cc68; */
+    background: linear-gradient(to bottom,#ecd6a7,#f0c14b);
+}
+
+.login__registerButton{
+    background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+    border: 1px solid ;
+    border-color: #adb1b8 #a2a6ac #8d9096;
+    color: #111;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 13px;
+    height: 29px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 60%) inset;
+    border-radius: 3px;
+}
+
+.login__registerButton:hover{
+    background: linear-gradient(to bottom,#eeeff1,#e7e9ec);
+}
+
+.login__container >form > p{
+    font-size: 12px!important;
+    line-height: 1.5!important;
+    margin-bottom: 20px;
+}
+
+.login__container >form > p>a{
+    text-decoration: none;
+    color:#0066c0;
+    cursor: pointer;
+}
+.login__container >form > p>a:hover{
+    color: rgb(173, 115, 6);
+    text-decoration: underline;
+}
+
+
+
+.login__container{
+    width: 300px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border:1px solid lightgray;
+    padding: 20px;
+}
+
+.login__container >h1{
+    font-weight: 400;
+    margin-bottom: 10px;
+
+    font-size: 28px;
+    line-height: 1.2;
+
+}
+
+.login__container > form >h5{
+    display: block;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    font-weight: 700;
+}
+
+.login__emailInput{
+    margin-bottom: 14px;
+}
+
+.login__passwordInput{
+    margin-bottom: 24px;
+}
+
+.login__container > form >input{
+    height: 31px;
+    background-color:white ;
+    width: 100%;
+    border-radius: 3px;
+    
+    padding: 3px 7px;
+    line-height: normal;
+
+    border: 1px solid #a6a6a6;
+    border-top-color: #949494;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 50%), 0 1px 0 rgb(0 0 0 / 7%) inset;
+    outline: 0;
+
+    transition: all .1s linear;
+
+    font-size: 100%;
+    vertical-align: middle;
+
+    font-family: "Amazon Ember",Arial,sans-serif;
+    cursor: text;
+
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    text-rendering: auto;
+
+    appearance: menulist-button;
+    background-color: rgb(232, 240, 254) !important;
+    background-image: none !important;
+    color: -internal-light-dark(black, white) !important;
+
+    box-sizing: border-box;
+
+}
+
+
+
+.login__container>form>input:focus{
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
+    background-color: white !important;
+}
+
+.login__newToAmazon{
+    text-align: center;
+    position: relative;
+    top: 2px;
+    padding-top: 1px;
+    margin-bottom: 14px;
+    line-height: 0;
+}
+
+.login__newToAmazon > h5{
+    line-height: 1;
+    font-size: 12px;
+    color: #767676;
+    font-weight: 400;
+    z-index: 2;
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+    padding: 0 8px 0 7px;
+}
+
+.login__newToAmazon::after{
+    content: "";
+    width: 100%;
+    background-color: transparent;
+    display: block;
+    height: 1px;
+    border-top: 1px solid #e7e7e7;
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    z-index: 1;
+}
