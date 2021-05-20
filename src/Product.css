@@ -43,4 +43,9 @@
     border-color: #a88734 #9c7e31 #846a29;
     margin-top: 10px;
     color: #111;
+    cursor: pointer;
+}
+
+.product > button:hover{
+    background: #cea131;
 }
