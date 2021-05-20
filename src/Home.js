@@ -7,7 +7,7 @@ function Home() {
     return (
         <div className="home">
             <div className="home__container">
-                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/Xiaomi/Events/May/MSD/RN10S/Updated/D23439348_MSD_WLD_RedmiNote10S_DesktopTallHero_3000x1200_3._CB668182081_.jpg"
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/Xiaomi/Events/May/MSD/RN10S/Updated/D23439348_MSD_WLD_RedmiNote10S_DesktopTallHero_3000x1200_3._CB668182081_.jpg" alt=""
                     className="home__image"/>
 
                 <div className="home__row">
