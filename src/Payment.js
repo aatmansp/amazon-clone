@@ -26,17 +26,19 @@ function Payment() {
     const [clientSecret,setClientSecret]=useState(true);
 
     useEffect(() => {
-        const getClientSecrect = async()=>{
+        const getClientSecrect = async () =>{
             const response = await axios({
                 method:'post',
-                url:`/payement/create?total=${getBasketTotal(basket)*100}`
-            })
+                url:`/payements/create?total=${getBasketTotal(basket) * 100}`
+            });
 
             setClientSecret(response.data.clientSecret);
         }
 
         getClientSecrect();
     }, [basket])
+
+    console.log('Client secret: ',clientSecret);
 
     const handleSubmit=async (e)=>{
         //Stripe stuff
@@ -50,9 +52,13 @@ function Payment() {
         })
         .then(({paymentIntent})=>{
             //payment conformation
-            setSucceedad=true;
+            setSucceedad(true);
             setError(null);
             setProcessing(false);
+
+            dispatch({
+                type:'EMPTY_BASKET'
+            })
 
             history.replace('/orders');
         })
@@ -109,8 +115,6 @@ function Payment() {
                                 renderText={(value)=>(
                                     <>
                                         <p>Subtotal ({basket.length} items): <strong>{value}</strong></p>
-    
-
                                     </>
                                 )}
                                 decimalScal={2}
