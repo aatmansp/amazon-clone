@@ -8,6 +8,7 @@
     position: sticky;
     top: 0px;
     z-index: 100;
+    border-radius: 2px;
    
 }
 
@@ -57,11 +58,14 @@
 }
 
 .header__optionLineOne{
-    font-size: 10px;
+    font-size: 12px;
+    line-height: 14px;
+    height: 14px;
 }
 .header__optionLineTwo{
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 14px;
+    line-height: 15px;
+    font-weight: 700;
 }
 
 .header__optionBasket{

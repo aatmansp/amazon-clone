@@ -21,7 +21,7 @@
 }
 
 .subtotal > button{
-    background-color: #f0c14b;
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
     width: 100%;
     height: 30px;
     border: 1px solid ;
@@ -29,4 +29,9 @@
     color: #111;
     margin-top: 10px;
     border-radius:2px ;
+    cursor: pointer;
+}
+
+.subtotal > button:hover{
+    background: linear-gradient(to bottom,#ecd6a7,#f0c14b);
 }

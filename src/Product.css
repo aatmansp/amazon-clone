@@ -13,6 +13,10 @@
     min-width: 100px;
 }
 
+.product:hover{
+    box-shadow: 3px 3px 10px rgb(150, 150, 150);
+}
+
 .product__rating{
     display: flex;
 }
@@ -38,14 +42,16 @@
 }
 
 .product > button{
-    background:#f0c14b ;
     border: 1px solid ;
     border-color: #a88734 #9c7e31 #846a29;
     margin-top: 10px;
     color: #111;
     cursor: pointer;
+    border-radius: 3px;
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+    box-shadow: 0 1px 0 rgb(255 255 255 / 40%) inset;
 }
 
 .product > button:hover{
-    background: #cea131;
+    background: linear-gradient(to bottom,#ecd6a7,#f0c14b);
 }

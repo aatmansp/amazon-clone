@@ -1,17 +1,26 @@
 import React from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link ,useHistory} from "react-router-dom";
 import { useState} from "react";
+import {auth} from "./firebase";
 
 function Login() {
 
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
+    const history=useHistory();
 
     const signIn=(e)=>{
         e.preventDefault();
 
         // firebase login
+        auth.signInWithEmailAndPassword(email,password)
+        .then((auth)=>{
+            if(auth){
+                history.push('/');
+            }
+        })
+        .catch(e=>alert(e.message));
 
 
     }
@@ -20,6 +29,20 @@ function Login() {
         e.preventDefault();
 
         //firebase register
+        auth.createUserWithEmailAndPassword(email,password)
+        .then((auth)=>{
+            if(auth){
+                history.push('/');
+            }
+            // else{
+            //     setEmail('');
+            //     setPassword('');
+            // }
+            console.log(auth)
+        })
+        .catch(error=>alert(error.message));
+        
+        
     }
 
 
@@ -38,7 +61,7 @@ function Login() {
 
         <form action="">
           <h5>E-mail</h5>
-          <input type="text" value ={email} className="login__emailInput" onChange={e=>setEmail(e.target.value)}/>
+          <input type="email" value ={email} className="login__emailInput" onChange={e=>setEmail(e.target.value)}/>
 
           <h5>Password</h5>
           <input type="password" value={password} className="login__passwordInput" onChange={e=>setPassword(e.target.value)}/>
@@ -60,7 +83,7 @@ function Login() {
             <h5>New to Amazon?</h5>
           </div>
 
-          <button onclick={register} className="login__registerButton">
+          <button onClick={register} className="login__registerButton">
             Create your Amazon account
           </button>
         </form>

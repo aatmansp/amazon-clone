@@ -7,7 +7,7 @@ import Subtotal from './Subtotal';
 
 function Checkout() {
 
-    const [{basket},dispatch]=useStateValue();
+    const [{basket,user},dispatch]=useStateValue();
     
     var isEmpty=false;
 
@@ -22,6 +22,7 @@ function Checkout() {
             
 
                 <div>
+                    {/* <h2>Hello, {user?.email.split("@",1)}</h2> */}
                     <h2 className="checkout__title">
                         Your Cart
                     </h2>
