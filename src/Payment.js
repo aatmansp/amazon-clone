@@ -8,6 +8,7 @@ import CurrencyFormat from 'react-currency-format';
 import {getBasketTotal} from './reducer';
 import {useHistory} from 'react-router-dom';
 import axios from './axios';
+import {db} from './firebase'
 
 
 function Payment() {
@@ -47,21 +48,40 @@ function Payment() {
 
         const payload=await stripe.confirmCardPayment(clientSecret,{
             payment_method:{
-                card:elements.getElement(CardElement)
+                card:elements.getElement(CardElement),
+                
             }
         })
         .then(({paymentIntent})=>{
             //payment conformation
+            
+
+            console.log(paymentIntent);
+            db.collection('users')
+            .doc(user?.uid)
+            .collection('orders')
+            .doc(paymentIntent.id)
+            .set({
+                basket:basket,
+                amount:paymentIntent.amount,
+                created:paymentIntent.created
+            })
+        
+
             setSucceedad(true);
             setError(null);
             setProcessing(false);
 
             dispatch({
                 type:'EMPTY_BASKET'
-            })
+            });
+
+
+
 
             history.replace('/orders');
         })
+        .catch(e=>console.log(e));
     }
 
     const handleChange=e=>{

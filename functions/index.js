@@ -25,9 +25,36 @@ app.post("/payements/create",async (request,response)=>{
     console.log('payment recieved',total);
 
     const paymentIntent=await stripe.paymentIntents.create({
-        amount:total,
-        currency:"usd"
+        // amount:total,
+        // currency:"usd",
+        // description: 'Software development services'
+
+        description: 'Software development services',
+        shipping: {
+        name: 'Jenny Rosen',
+        address: {
+            line1: '510 Townsend St',
+            postal_code: '98140',
+            city: 'San Francisco',
+            state: 'CA',
+            country: 'US',
+        },
+    },
+        amount: total,
+        currency: 'usd',
+        payment_method_types: ['card'],
     });
+
+    // var customer = await stripe.customers.create({
+    //     name: 'Jenny Rosen',
+    //     address: {
+    //       line1: '510 Townsend St',
+    //       postal_code: '98140',
+    //       city: 'San Francisco',
+    //       state: 'CA',
+    //       country: 'US',
+    //     }
+    //   });
 
     response.status(201)
     .send({
