@@ -45,17 +45,6 @@ app.post("/payements/create",async (request,response)=>{
         payment_method_types: ['card'],
     });
 
-    // var customer = await stripe.customers.create({
-    //     name: 'Jenny Rosen',
-    //     address: {
-    //       line1: '510 Townsend St',
-    //       postal_code: '98140',
-    //       city: 'San Francisco',
-    //       state: 'CA',
-    //       country: 'US',
-    //     }
-    //   });
-
     response.status(201)
     .send({
         clientSecret:paymentIntent.client_secret,

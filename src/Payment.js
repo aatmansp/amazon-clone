@@ -134,7 +134,7 @@ function Payment() {
                             <CurrencyFormat
                                 renderText={(value)=>(
                                     <>
-                                        <p>Subtotal ({basket.length} items): <strong>{value}</strong></p>
+                                        <h3 className="payment__orderTotal">Order Total : <strong>{value}</strong></h3>
                                     </>
                                 )}
                                 decimalScal={2}

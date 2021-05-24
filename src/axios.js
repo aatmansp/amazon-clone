@@ -6,3 +6,8 @@ const instance = axios.create({
 });
 
 export default instance;
+
+
+// local test url: http://localhost:5001/clone-c688c/us-central1/api
+
+//Function deployed url:
