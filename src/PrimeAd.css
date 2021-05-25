@@ -1,0 +1,42 @@
+.primeAd{
+    /* padding: 10px; */
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
+
+.primeAd>a>img{
+    height: 420px;
+    position: relative;
+    object-fit: contain;
+    margin-top: -65px;
+    margin-bottom: -37px;
+    /* padding-top: 30px; */
+    padding-right: 10px;
+    padding-left: 10px;
+    z-index: -1;
+    opacity: 1;
+}
+
+.primeAd__headingText{
+    color: white;
+    padding: 0 30px;
+    margin: 0 10px;
+    margin-top: 11px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    font-size: 15px!important;
+    line-height: 19px!important;
+    background: linear-gradient(to top,#0000,rgb(0, 0, 0));
+}
+
+.primeAd__footer{
+    color: white;
+    padding: 0 30px;
+    margin: 0 10px;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    background: linear-gradient(to bottom,#0000,rgb(0, 0, 0));
+}
