@@ -19,37 +19,73 @@ app.get('/',(request,response)=>{
     response.status(200).send('Confirm');
 })
 
-app.post("/payements/create",async (request,response)=>{
-    const total=request.query.total;
+// app.post("/payments/create",async (request,response) => {
+//     const total=request.query.total;
 
-    console.log('payment recieved',total);
+//     console.log('payment recieved',total);
 
-    const paymentIntent=await stripe.paymentIntents.create({
-        // amount:total,
-        // currency:"usd",
-        // description: 'Software development services'
+//     const paymentIntent=await stripe.paymentIntents.create({
+//         // amount:total,
+//         // currency:"usd",
+//         // description: 'Software development services'
+
+//         description: 'Software development services',
+//         shipping: {
+//         name: 'Jenny Rosen',
+//         address: {
+//             line1: '510 Townsend St',
+//             postal_code: '98140',
+//             city: 'San Francisco',
+//             state: 'CA',
+//             country: 'US',
+//         },
+//     },
+//         amount: total,
+//         currency: 'usd',
+//         payment_method_types: ['card'],
+//     });
+
+//     response.status(201)
+//     .send({
+//         clientSecret:paymentIntent.client_secret,
+//     })
+// })
+
+
+app.post("/payments/create", async (request, response) => {
+    const total = request.query.total;
+  
+    // console.log("Payment Request Recieved BOOM!!! for this amount >>> ", total);
+  
+    const paymentIntent = await stripe.paymentIntents.create({
+    //   amount: total, // subunits of the currency
+    //   currency: "usd",
 
         description: 'Software development services',
         shipping: {
-        name: 'Jenny Rosen',
-        address: {
-            line1: '510 Townsend St',
-            postal_code: '98140',
-            city: 'San Francisco',
-            state: 'CA',
-            country: 'US',
+            name: 'Jenny Rosen',
+            address: {
+                line1: '510 Townsend St',
+                postal_code: '98140',
+                city: 'San Francisco',
+                state: 'CA',
+                country: 'US',
+            },
         },
-    },
         amount: total,
         currency: 'usd',
         payment_method_types: ['card'],
-    });
+    
 
-    response.status(201)
-    .send({
-        clientSecret:paymentIntent.client_secret,
+        
+    });
+  
+    // OK - Created
+    response.status(201).send({
+      clientSecret: paymentIntent.client_secret,
     })
-})
+  })
+
 
 //Listen command
 exports.api=functions.https.onRequest(app);

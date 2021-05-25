@@ -30,7 +30,7 @@ function Payment() {
         const getClientSecrect = async () =>{
             const response = await axios({
                 method:'post',
-                url:`/payements/create?total=${getBasketTotal(basket) * 100}`
+                url:`/payments/create?total=${getBasketTotal(basket) * 100}`
             });
 
             setClientSecret(response.data.clientSecret);
