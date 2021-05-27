@@ -61,19 +61,40 @@
     font-size: 12px;
     line-height: 14px;
     height: 14px;
+    color: #ccc;
 }
+
 .header__optionLineTwo{
     font-size: 14px;
     line-height: 15px;
     font-weight: 700;
+    color: white;
 }
 
 .header__optionBasket{
     display: flex;
     align-items: center;
     color: white;
+    padding-right: 2px;
 }
 
 .header__basketCount{
     padding: 4px;
+}
+
+.header__locationIcon{
+    filter: invert();
+}
+
+.header__dilivery{
+    display: flex;
+    padding-right: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__diliveryInfo{
+    display: flex;
+    
+    flex-direction: column;
 }

@@ -3,11 +3,13 @@ import './Orders.css';
 import {db} from './firebase';
 import { useStateValue } from './StateProvider';
 import Order from './Order';
+import {useHistory} from 'react-router-dom';
 
 function Orders() {
 
     const [{basket,user},dispatch]=useStateValue();
     const [orders,setOrders]=useState([]);
+    const history=useHistory();
 
     useEffect(() => {
 
@@ -24,6 +26,7 @@ function Orders() {
             })
         } else{
             setOrders([]);
+            history.replace('./login')
         }
 
       

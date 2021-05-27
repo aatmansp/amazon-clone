@@ -5,6 +5,7 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import {Link} from 'react-router-dom';
 import { useStateValue } from './StateProvider';
 import {auth} from './firebase';
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 
 function Header() {
 
@@ -27,6 +28,15 @@ function Header() {
                 />
             </Link>
 
+            <div className="header__dilivery">
+                <LocationOnOutlinedIcon className="header__locationIcon"/>
+                <div className="header__diliveryInfo">
+                    <span className="header__optionLineOne">{user ? 'Deliver to '+user.email.split("@",1):'Hello'}</span>
+                    <span className="header__optionLineTwo">{user ? 'Vadodara 39xxxx':'Select your address'}</span>
+                </div>
+
+            </div>
+
             <div className="header__search">
                 <input type="text" className="header__searchInput"/>
                 <SearchIcon className="header__searchIcon"/>
@@ -47,12 +57,12 @@ function Header() {
                     </div>
                 </Link>
 
-                <a href="https://www.amazon.in/amazonprime">
+                {/* <a href="https://www.amazon.in/amazonprime">
                     <div className="header__option">
                         <span className="header__optionLineOne">Your</span>
                         <span className="header__optionLineTwo">Prime</span>
                     </div>
-                </a>
+                </a> */}
 
                 <Link to="/checkout">
                     <div className="header__optionBasket">
