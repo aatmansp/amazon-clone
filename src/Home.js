@@ -10,7 +10,7 @@ function Home() {
             <div className="home__container">
                 <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/Xiaomi/Events/May/MSD/RN10S/Updated/D23439348_MSD_WLD_RedmiNote10S_DesktopTallHero_3000x1200_3._CB668182081_.jpg" alt=""
                     className="home__image"/>
-
+                
                 <div className="home__row">
                     <Product id={672329} title='The Lean Startup: How Constant Innovation Creates Radically Successful Businesses' image='https://images-na.ssl-images-amazon.com/images/I/51CTIr1bJxL._SX325_BO1,204,203,200_.jpg' price={20.99} rating={3}/>
                     <Product id={672309} title="Rich Dad Poor Dad: What the Rich Teach Their Kids About Money That the Poor and Middle Class Do Not!" image="https://images-na.ssl-images-amazon.com/images/I/51wOOMQ+F3L._SX312_BO1,204,203,200_.jpg" price={5} rating={4}/>
@@ -38,3 +38,7 @@ function Home() {
 }
 
 export default Home
+
+
+// bg image : https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/Xiaomi/Events/May/MSD/RN10S/Updated/D23439348_MSD_WLD_RedmiNote10S_DesktopTallHero_3000x1200_3._CB668182081_.jpg
+// https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/cnnjpp/May21/BAU_Hero/OP_9/OP_9_Incl_3000x1200._CB668916820_.jpg
