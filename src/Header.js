@@ -29,12 +29,13 @@ function Header() {
             </Link>
 
             <div className="header__dilivery">
-                <LocationOnOutlinedIcon className="header__locationIcon"/>
-                <div className="header__diliveryInfo">
-                    <span className="header__optionLineOne">{user ? 'Deliver to '+user.email.split("@",1):'Hello'}</span>
-                    <span className="header__optionLineTwo">{user ? 'Vadodara 39xxxx':'Select your address'}</span>
-                </div>
-
+                <Link to="/address">
+                    <LocationOnOutlinedIcon className="header__locationIcon"/>
+                    <div className="header__diliveryInfo">
+                        <span className="header__optionLineOne">{user ? 'Deliver to '+user.email.split("@",1):'Hello'}</span>
+                        <span className="header__optionLineTwo">{user ? 'Vadodara 39xxxx':'Select your address'}</span>
+                    </div>
+                </Link>
             </div>
 
             <div className="header__search">

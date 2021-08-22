@@ -82,19 +82,19 @@
     padding: 4px;
 }
 
-.header__locationIcon{
-    filter: invert();
-}
 
-.header__dilivery{
+.header__dilivery a{
     display: flex;
     padding-right: 15px;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
-
+.header__locationIcon{
+    filter: invert();
+    color: black;
+}
 .header__diliveryInfo{
     display: flex;
-    
     flex-direction: column;
 }

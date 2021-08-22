@@ -1,0 +1,47 @@
+
+
+.addressComp{
+    margin-bottom: 50px;
+}
+.addressComp__container{
+    border: 1px solid rgb(173, 167, 167);
+    width: 300px;
+    height: 300px;
+    margin:20px 20px 20px 0px;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-top: 20px;
+    line-height: 20px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    
+}
+
+.addressComp__address{
+    font-size: 14px;
+    color: #0F1111;
+    display: flex;
+    flex-direction: column;
+    padding: 2px 0px;
+}
+
+.addressComp__name h5{
+    font-weight: 700 !important;
+    font-size: 14px;
+}
+
+.addressComp__edit {
+    margin-top: -55px;
+    margin-left: 30px;
+    text-decoration: none;
+    font-size: 12px;
+    float: bottom;
+}
+
+.addressComp__edit a {
+    color:  #007185;
+}
+
+.addressComp__edit a:hover{
+    color: #C7511F;
+    text-decoration: underline;
+}

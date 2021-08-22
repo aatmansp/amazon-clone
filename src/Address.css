@@ -1,0 +1,17 @@
+
+body{
+    background-color: white;
+}
+.address{
+    margin-left:200px;
+    margin-right: 200px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    background-color: white;
+    /* border: 1px solid black; */
+}
+
+.address__components{
+    display: flex;
+}
+
