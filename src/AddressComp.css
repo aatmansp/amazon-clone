@@ -2,18 +2,19 @@
 
 .addressComp{
     margin-bottom: 50px;
+    /* background-color: white; */
 }
 .addressComp__container{
     border: 1px solid rgb(173, 167, 167);
     width: 300px;
-    height: 300px;
+    height: 250px;
     margin:20px 20px 20px 0px;
     border-radius: 10px;
     padding-left: 30px;
     padding-top: 20px;
     line-height: 20px;
     font-family: "Amazon Ember",Arial,sans-serif;
-    
+    /* background-color: white; */
 }
 
 .addressComp__address{
