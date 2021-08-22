@@ -28,8 +28,7 @@ function AddressComp({id,name,line1,line2,city,state,pincode,country,phone}) {
                         <p>Phone number: ‪{phone}</p>
                     </div>
                 </div>
-
-                
+    
             </div>
             <div className="addressComp__edit">
                     <p><a href="#">Edit</a>  &nbsp; |  &nbsp; <a href="#">Remove</a></p>
