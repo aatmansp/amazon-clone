@@ -1,0 +1,68 @@
+
+.addAddress{
+    padding-left:80px;
+    padding-right: 150px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: white !important;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.addAddress h2{
+    /* border: 1px solid black; */
+    padding: 10px;
+    margin-left: -10px;
+}
+
+.addAddress__form{
+    margin-left: -68px;
+    margin-right: -150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.addAddress__form h5{
+    padding-bottom: 2px;
+}
+
+.addAddress__form input{
+    width: 300px;
+    background-color: #fff;
+    height: 31px;
+    padding: 3px 7px;
+    line-height: normal;
+    border: 1px solid #888C8C;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgb(15 17 17 / 15%) inset;
+    outline: 0;
+    margin-bottom: 12px;
+}
+.addAddress__form input:focus{
+    border-color: #007185;
+    box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgb(15 17 17 / 15%) inset;
+
+}
+
+.addAddress__form button{
+    cursor: pointer;
+    margin-top: 10px;
+    color: #0F1111;
+    padding: 4px 10px 4px 10px;
+    font-size: 12px;
+    line-height: 19px;
+    border-style: solid;
+    border-width: 1px;
+    background: #FFD814;
+    border-color: #FCD200;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+}
+
+.addAddress__form button:hover{
+    background: #F7CA00;
+    border-color: #F2C200;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import './AddressComp.css';
 import AddIcon from '@material-ui/icons/Add';
+import { Link } from 'react-router-dom';
 
 function AddressComp({id,name,line1,line2,city,state,pincode,country,phone,isDefault,temp}) {
 
@@ -45,11 +46,13 @@ function AddressComp({id,name,line1,line2,city,state,pincode,country,phone,isDef
             }
 
             {temp && 
-                <div className="addressComp__addAddress">
-                    <h4>+</h4>
-                    {/* <AddIcon/> */}
-                    <p>Add a address</p>
-                </div>
+                <Link to="/addAddress">
+                    <div className="addressComp__addAddress">
+                        <h4>+</h4>
+                        {/* <AddIcon/> */}
+                        <p>Add a address</p>
+                    </div>
+                </Link>
             }
             
         </div>
