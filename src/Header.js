@@ -33,7 +33,7 @@ function Header() {
                     <LocationOnOutlinedIcon className="header__locationIcon"/>
                     <div className="header__diliveryInfo">
                         <span className="header__optionLineOne">{user ? 'Deliver to '+user.email.split("@",1):'Hello'}</span>
-                        <span className="header__optionLineTwo">{user ? 'Vadodara 39xxxx':'Select your address'}</span>
+                        <span className="header__optionLineTwo">{user ? 'Vadodara 390007':'Select your address'}</span>
                     </div>
                 </Link>
             </div>

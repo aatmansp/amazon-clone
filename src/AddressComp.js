@@ -1,13 +1,21 @@
 import React from 'react';
 import './AddressComp.css';
+import AddIcon from '@material-ui/icons/Add';
 
-function AddressComp({id,name,line1,line2,city,state,pincode,country,phone}) {
+function AddressComp({id,name,line1,line2,city,state,pincode,country,phone,isDefault,temp}) {
 
 
 
     return (
         <div className="addressComp">
-            <div className="addressComp__container">
+             
+            {!temp &&<div className="addressComp__container">
+                
+                    {isDefault && <div className="addressComp__default">
+                        <p>Default</p>
+                        </div>
+                    }   
+                   
                 <div className="addressComp__name">
                     <h5>{name}</h5>
                 </div>
@@ -30,11 +38,22 @@ function AddressComp({id,name,line1,line2,city,state,pincode,country,phone}) {
                 </div>
     
             </div>
-            <div className="addressComp__edit">
-                    <p><a href="#">Edit</a>  &nbsp; |  &nbsp; <a href="#">Remove</a></p>
+            }
+            {!temp && <div className="addressComp__edit">
+                    <p><a href="#">Edit</a>  &nbsp; |  &nbsp; <a href="#">Remove</a>&nbsp; |  &nbsp; {!isDefault &&<a href="#">Set as Default</a>}</p>
             </div>
+            }
+
+            {temp && 
+                <div className="addressComp__addAddress">
+                    <h4>+</h4>
+                    {/* <AddIcon/> */}
+                    <p>Add a address</p>
+                </div>
+            }
             
         </div>
+                
     )
 }
 

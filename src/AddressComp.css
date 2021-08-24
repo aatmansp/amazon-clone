@@ -5,7 +5,7 @@
     /* background-color: white; */
 }
 .addressComp__container{
-    border: 1px solid rgb(173, 167, 167);
+    border: 1px solid #C7C7C7;
     width: 300px;
     height: 250px;
     margin:20px 20px 20px 0px;
@@ -45,4 +45,44 @@
 .addressComp__edit a:hover{
     color: #C7511F;
     text-decoration: underline;
+}
+
+.addressComp__default{
+    border-bottom:1px solid rgb(190, 188, 188) ;
+    margin-left: -30px;
+    margin-bottom: 10px;
+}
+.addressComp__default p{
+    margin-left: 30px;
+    margin-top: -12px;
+    margin-bottom: 5px;
+    color: rgb(61, 57, 57);
+    font-size: 12px;
+}
+
+.addressComp__addAddress{
+    border: 1px dashed #C7C7C7;
+    width: 300px;
+    height: 250px;
+    margin:20px 20px 20px 0px;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-top: 20px;
+    line-height: 20px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    cursor: pointer;
+    /* background-color: white; */
+}
+
+.addressComp__addAddress h4{
+    font-size: 70px;
+    color: rgb(207, 207, 207);
+    margin-left: 110px;
+    margin-top: 78px;
+}
+.addressComp__addAddress p{
+    font-size: 20px;
+    color: rgb(71, 65, 65);
+    margin-left: 70px;
+    margin-top: 26px;
 }
