@@ -19,6 +19,7 @@ function Orders() {
             .collection('orders')
             .orderBy('created','desc')
             .onSnapshot(snapshot =>{
+                // console.log("here2"+JSON.stringify(snapshot));
                 setOrders(snapshot.docs.map(doc =>({
                     id:doc.id,
                     data:doc.data()

@@ -41,7 +41,7 @@ function AddressComp({id,name,line1,line2,city,state,pincode,country,phone,isDef
             </div>
             }
             {!temp && <div className="addressComp__edit">
-                    <p><a href="#">Edit</a>  &nbsp; |  &nbsp; <a href="#">Remove</a>&nbsp; |  &nbsp; {!isDefault &&<a href="#">Set as Default</a>}</p>
+                    <p><a href="#">Edit</a>  &nbsp; |  &nbsp; <a href="#">Remove</a> &nbsp; |  &nbsp;{!isDefault && <a href="#">Set as Default</a>}</p>
             </div>
             }
 
