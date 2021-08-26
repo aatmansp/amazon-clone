@@ -25,8 +25,12 @@
     padding: 2px 0px;
 }
 
+.addressComp__address p{
+    font-weight: 500 !important;
+}
+
 .addressComp__name h5{
-    font-weight: 700 !important;
+    font-weight: 900 !important;
     font-size: 14px;
 }
 
@@ -85,4 +89,5 @@
     color: rgb(71, 65, 65);
     margin-left: 70px;
     margin-top: 26px;
+    font-weight: 900;
 }

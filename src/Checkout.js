@@ -27,7 +27,9 @@ function Checkout() {
                         Your Cart
                     </h2>
 
-                    {isEmpty && <div>Your Cart is Empty</div>}
+                    {isEmpty && 
+                    <div className="checkout__emptyCart">Your Cart is Empty</div>
+                    }
                     
 
                     {basket.map((item)=>(

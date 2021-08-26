@@ -18,7 +18,7 @@ function Address() {
             .doc(user?.uid)
             .collection('addresses')
             .onSnapshot(snapshot => {
-                console.log("here"+JSON.stringify(snapshot));
+                // console.log("here"+JSON.stringify(snapshot));
                 setAddress(snapshot._delegate._snapshot.docChanges.map(ins =>({
                     name:ins.doc.data.partialValue.mapValue.fields.name.stringValue,
                     addressLine1:ins.doc.data.partialValue.mapValue.fields.addressLine1.stringValue,
@@ -28,10 +28,7 @@ function Address() {
                     state:ins.doc.data.partialValue.mapValue.fields.state.stringValue,
                     country:ins.doc.data.partialValue.mapValue.fields.country.stringValue,
                     pincode:ins.doc.data.partialValue.mapValue.fields.pincode.stringValue,
-                    default:ins.doc.data.partialValue.mapValue.fields.default.booleanValue
-
-                    
-                    
+                    default:ins.doc.data.partialValue.mapValue.fields.default.booleanValue        
                 })))
             })
         }

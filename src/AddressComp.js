@@ -2,10 +2,67 @@ import React from 'react';
 import './AddressComp.css';
 import AddIcon from '@material-ui/icons/Add';
 import { Link } from 'react-router-dom';
+import {db} from './firebase';
+import { useStateValue } from './StateProvider';
+import {useHistory} from 'react-router-dom';
 
 function AddressComp({id,name,line1,line2,city,state,pincode,country,phone,isDefault,temp}) {
 
+    const [{user}]=useStateValue();
+    const history=useHistory();
 
+    const removeAddress=(e)=>{
+        e.preventDefault();
+        
+        db.collection('users')
+        .doc(user?.uid)
+        .collection('addresses')
+        .doc(name)
+        .delete()
+        .then(()=>{
+            console.log('address delete');
+            window.location.reload();
+        })
+    }
+
+    const setDefault=async(e)=>{
+        e.preventDefault();
+
+        var addressCollection=db.collection('users')
+        .doc(user?.uid)
+        .collection('addresses');
+      
+        var query=addressCollection.where("default","==",true)
+        .limit(1);
+
+        await query.get()
+        .then((querySnapshot)=>{
+            querySnapshot.forEach((snapshot) => {
+                // doc.data() is never undefined for query doc snapshots
+                console.log(snapshot.id, " => ", snapshot.data());
+                addressCollection.doc(snapshot.id).update({default:false});
+            });
+        })
+        
+        
+        
+
+        
+        query=addressCollection.where("name","==",name)
+        .limit(1);
+        await query.get()
+        .then((querySnapshot)=>{
+            querySnapshot.forEach((snapshot) => {
+                // doc.data() is never undefined for query doc snapshots
+                console.log(snapshot.id, " => ", snapshot.data());
+                addressCollection.doc(snapshot.id).update({default:true});
+                
+            });
+        })
+        
+        // window.location.reload();
+        history.push('/');
+    }
 
     return (
         <div className="addressComp">
@@ -41,7 +98,7 @@ function AddressComp({id,name,line1,line2,city,state,pincode,country,phone,isDef
             </div>
             }
             {!temp && <div className="addressComp__edit">
-                    <p><a href="#">Edit</a>  &nbsp; |  &nbsp; <a href="#">Remove</a> &nbsp; |  &nbsp;{!isDefault && <a href="#">Set as Default</a>}</p>
+                    <p><a href="#">Edit</a>  &nbsp; |  &nbsp; <a href="" onClick={removeAddress}>Remove</a> &nbsp; |  &nbsp;{!isDefault && <a href="#" onClick={setDefault}>Set as Default</a>}</p>
             </div>
             }
 
