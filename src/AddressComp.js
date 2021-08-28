@@ -17,7 +17,7 @@ function AddressComp({id,name,line1,line2,city,state,pincode,country,phone,isDef
         db.collection('users')
         .doc(user?.uid)
         .collection('addresses')
-        .doc(name)
+        .doc(id)
         .delete()
         .then(()=>{
             console.log('address delete');
@@ -43,11 +43,7 @@ function AddressComp({id,name,line1,line2,city,state,pincode,country,phone,isDef
                 addressCollection.doc(snapshot.id).update({default:false});
             });
         })
-        
-        
-        
 
-        
         query=addressCollection.where("name","==",name)
         .limit(1);
         await query.get()

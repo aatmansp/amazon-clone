@@ -32,16 +32,16 @@ function Header() {
         .then((querySnapshot)=>{
             querySnapshot.forEach((snapshot) => {
                 // doc.data() is never undefined for query doc snapshots
-                console.log(snapshot.id, " => ", snapshot.data());
+                // console.log(snapshot.id, " => ", snapshot.data());
                 // addressCollection.doc(snapshot.id).update();
                 setName(snapshot.data().name);
                 setCity(snapshot.data().city);
                 setPincode(snapshot.data().pincode);
-                console.log(name+city+pincode);
+                // console.log(name+city+pincode);
             });
         })
 
-    })
+    });
 
     // console.log(user);
 

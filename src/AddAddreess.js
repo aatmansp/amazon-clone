@@ -28,8 +28,8 @@ function AddAddreess() {
         db.collection('users')
         .doc(user?.uid)
         .collection('addresses')
-        .doc(name)
-        .set({
+        // .doc(name)
+        .add({
             name:name,
             addressLine1:addressLine1,
             addressLine2:addressLine2,
