@@ -10,7 +10,12 @@ function AddAddreess() {
 
     const history=useHistory();
     const location=useLocation();
+    // const {empty}=location.state;
     const {id,n,num,adl1,adl2,ci,st,cou,pin}=location.state;
+    // if(!empty){
+    //     var {id,n,num,adl1,adl2,ci,st,cou,pin}=location.state;
+    // }
+    
 
     const [{user}]=useStateValue();
     const [name,setName]=useState(n);

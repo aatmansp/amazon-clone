@@ -114,6 +114,17 @@ function AddressComp({id,name,line1,line2,city,state,pincode,country,phone,isDef
             {temp && 
                 <Link to={{
                     pathname:"/addAddress",
+                    state:{
+                        id:'',
+                        n:'',
+                        num:'',
+                        adl1:'',
+                        adl2:'',
+                        ci:'',
+                        st:'',
+                        cou:'',
+                        pin:'',
+                    }
                 }}>
                     <div className="addressComp__addAddress">
                         <h4>+</h4>
