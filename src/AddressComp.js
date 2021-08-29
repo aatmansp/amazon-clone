@@ -94,12 +94,27 @@ function AddressComp({id,name,line1,line2,city,state,pincode,country,phone,isDef
             </div>
             }
             {!temp && <div className="addressComp__edit">
-                    <p><a href="#">Edit</a>  &nbsp; |  &nbsp; <a href="" onClick={removeAddress}>Remove</a> &nbsp; |  &nbsp;{!isDefault && <a href="#" onClick={setDefault}>Set as Default</a>}</p>
+                    <p><Link to={{
+                        pathname:"/addAddress",
+                        state:{
+                            id:id,
+                            n:name,
+                            num:phone,
+                            adl1:line1,
+                            adl2:line2,
+                            ci:city,
+                            st:state,
+                            cou:country,
+                            pin:pincode,
+                        }
+                    }}>Edit</Link> &nbsp; |  &nbsp; <a href="" onClick={removeAddress}>Remove</a> &nbsp; |  &nbsp;{!isDefault && <a href="#" onClick={setDefault}>Set as Default</a>}</p>
             </div>
             }
 
             {temp && 
-                <Link to="/addAddress">
+                <Link to={{
+                    pathname:"/addAddress",
+                }}>
                     <div className="addressComp__addAddress">
                         <h4>+</h4>
                         {/* <AddIcon/> */}
