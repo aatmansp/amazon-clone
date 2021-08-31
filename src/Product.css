@@ -10,8 +10,9 @@
     padding: 20px;
     width: 100%;
     min-height: 380px;
-    min-width: 100px;
+    min-width: 264px;
     max-width: 300px;
+    /* width:400px; */
 }
 
 .product:hover{

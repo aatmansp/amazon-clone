@@ -31,16 +31,12 @@ function Product({id,title,image,price,rating}) {
                 <div className="product__rating">
                     {Array(rating).fill().map((_,i)=>(
                         <p>⭐️</p>
-                    ))}
-                    
-                    
-                </div>
-
-                
+                    ))}             
+                </div>     
             </div>
             <img src={image} alt="" />
 
-            <button onClick={addToBasket}>Add to basket</button>
+            <button onClick={addToBasket} className="product__addButton">Add to basket</button>
         </div>
     )
 }

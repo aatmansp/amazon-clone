@@ -2,9 +2,37 @@ import React from 'react';
 import './Home.css';
 import PrimeAd from './PrimeAd';
 import Product from './Product';
+import {db} from './firebase';
+import { useEffect ,useState} from 'react';
+import { useStateValue } from './StateProvider';
 
 
 function Home() {
+    const [user]=useStateValue();
+    const [products,setProducts]=useState([])
+
+    useEffect(()=>{
+        var productCollection=db.collection('products');
+
+        productCollection.get()
+        .then((snapShot)=>{
+            var arr=[];
+            snapShot.forEach((snap)=>{
+                // console.log(snap.id+" "+JSON.stringify(snap.data()));
+                arr.push({
+                    id:snap.id,
+                    title:snap.data().title,
+                    image:snap.data().image,
+                    price:snap.data().price,
+                    rating:snap.data().rating
+                })
+            });
+            setProducts(arr);
+            
+        })
+    },[user])
+    console.log(products);
+
     return (
         <div className="home">
             <div className="home__container">
@@ -16,6 +44,9 @@ function Home() {
                     <Product id={672309} title="Rich Dad Poor Dad: What the Rich Teach Their Kids About Money That the Poor and Middle Class Do Not!" image="https://images-na.ssl-images-amazon.com/images/I/51wOOMQ+F3L._SX312_BO1,204,203,200_.jpg" price={5} rating={4}/>
                     <Product id={672344} title="Fire TV Stick (2020) with Alexa Voice Remote (includes TV controls) | Stream HD Quality Video with Dolby Atmos Audio | 2020 release" image="https://images-na.ssl-images-amazon.com/images/I/51jULzY76lL._SL1000_.jpg" price={39.99} rating={4}/>
                     <Product id={672345} title="OnePlus Buds Z (White)" image="https://images-na.ssl-images-amazon.com/images/I/51vwQzwM%2BZL._SL1500_.jpg" price={41.99} rating={4}/>
+                    <Product id={672345} title="OnePlus Buds Z (White)" image="https://images-na.ssl-images-amazon.com/images/I/51vwQzwM%2BZL._SL1500_.jpg" price={41.99} rating={4}/>
+                    {/* <Product id={672345} title="OnePlus Buds Z (White)" image="https://images-na.ssl-images-amazon.com/images/I/51vwQzwM%2BZL._SL1500_.jpg" price={41.99} rating={4}/>
+                    <Product id={672345} title="OnePlus Buds Z (White)" image="https://images-na.ssl-images-amazon.com/images/I/51vwQzwM%2BZL._SL1500_.jpg" price={41.99} rating={4}/> */}
                     
                 </div>
 
