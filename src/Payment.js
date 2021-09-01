@@ -8,7 +8,7 @@ import CurrencyFormat from 'react-currency-format';
 import {getBasketTotal} from './reducer';
 import {useHistory} from 'react-router-dom';
 import axios from './axios';
-import {db} from './firebase'
+import {db} from './firebase';
 
 
 function Payment() {
@@ -26,6 +26,8 @@ function Payment() {
     const [processing,setProcessing]=useState("");
     const [clientSecret,setClientSecret]=useState(true);
 
+    const [address,setAddress]=useState([]);
+
     useEffect(() => {
         const getClientSecrect = async () =>{
             const response = await axios({
@@ -36,10 +38,40 @@ function Payment() {
             setClientSecret(response.data.clientSecret);
         }
 
+        var addressCollection=db.collection('users')
+        .doc(user?.uid)
+        .collection('addresses');
+
+        var query=addressCollection.where("default","==",true)
+        .limit(1);
+
+        query.get()
+        .then((snapshot)=>{
+            var arr=[];
+            snapshot.forEach((snap)=>{
+                // console.log(snap.id +" => " + JSON.stringify(snap.data()));
+                arr.push({
+                    id:snap.id,
+                    name:snap.data().name,
+                    addressLine1:snap.data().addressLine1,
+                    addressLine2:snap.data().addressLine2,
+                    number:snap.data().number,
+                    city:snap.data().city,
+                    state:snap.data().state,
+                    country:snap.data().country,
+                    pincode:snap.data().pincode,
+                    default:snap.data().default 
+                })                   
+            });
+            setAddress(arr);
+        });
+
+
         getClientSecrect();
     }, [basket])
 
-    console.log('Client secret: ',clientSecret);
+    // console.log('Client secret: ',clientSecret);
+    // console.log(address);
 
     const handleSubmit=async (e)=>{
         //Stripe stuff
@@ -102,11 +134,17 @@ function Payment() {
                     <div className="payment__title">
                         <h3>Delivery Address</h3>
                     </div>
-                    <div className="payment__address">
-                        <p>{user?.email}</p>
-                        <p>123 React Lane</p>
-                        <p>Las Vegas</p>
-                    </div>
+                    {address?.map(address=>(
+                        <div className="payment__address"> 
+                            {/* <p>{user?.email}</p> */}
+                            <p>{address.name}</p>
+                            <p>{address.addressLine1}</p>
+                            <p>{address.addressLine2}</p>
+                            <p>{address.city} :- {address.pincode}</p>
+                            <p>{address.state}, {address.country}</p>
+                            <p>Phone Number: {address.number}</p>
+                        </div>
+                    ))}
                 </div>
 
                 <div className="payment__section">

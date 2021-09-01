@@ -9,17 +9,20 @@ import { useStateValue } from './StateProvider';
 
 function Home() {
     const [user]=useStateValue();
-    const [products,setProducts]=useState([])
+    const [products1,setProducts1]=useState([]);
+    // const [products2,setProducts2]=useState([]);
+    // const [products3,setProducts3]=useState([]);
+    var ind=0;
 
     useEffect(()=>{
         var productCollection=db.collection('products');
-
+        var arr1=[];
         productCollection.get()
         .then((snapShot)=>{
-            var arr=[];
+            
             snapShot.forEach((snap)=>{
                 // console.log(snap.id+" "+JSON.stringify(snap.data()));
-                arr.push({
+                arr1.push({
                     id:snap.id,
                     title:snap.data().title,
                     image:snap.data().image,
@@ -27,11 +30,12 @@ function Home() {
                     rating:snap.data().rating
                 })
             });
-            setProducts(arr);
+            setProducts1(arr1);
             
-        })
+        });
+        
     },[user])
-    console.log(products);
+    // console.log(products1);
 
     return (
         <div className="home">
@@ -40,10 +44,14 @@ function Home() {
                     className="home__image"/>
                 
                 <div className="home__row">
+                    {/* {products1?.map(p=>(
+                        // console.log(p);
+                        <Product id={p.id} title={p.title} image={p.image} price={p.price} rating={p.rating}/>
+                    ))} */}
+                    
                     <Product id={672329} title='The Lean Startup: How Constant Innovation Creates Radically Successful Businesses' image='https://images-na.ssl-images-amazon.com/images/I/51CTIr1bJxL._SX325_BO1,204,203,200_.jpg' price={20.99} rating={3}/>
                     <Product id={672309} title="Rich Dad Poor Dad: What the Rich Teach Their Kids About Money That the Poor and Middle Class Do Not!" image="https://images-na.ssl-images-amazon.com/images/I/51wOOMQ+F3L._SX312_BO1,204,203,200_.jpg" price={5} rating={4}/>
                     <Product id={672344} title="Fire TV Stick (2020) with Alexa Voice Remote (includes TV controls) | Stream HD Quality Video with Dolby Atmos Audio | 2020 release" image="https://images-na.ssl-images-amazon.com/images/I/51jULzY76lL._SL1000_.jpg" price={39.99} rating={4}/>
-                    <Product id={672345} title="OnePlus Buds Z (White)" image="https://images-na.ssl-images-amazon.com/images/I/51vwQzwM%2BZL._SL1500_.jpg" price={41.99} rating={4}/>
                     <Product id={672345} title="OnePlus Buds Z (White)" image="https://images-na.ssl-images-amazon.com/images/I/51vwQzwM%2BZL._SL1500_.jpg" price={41.99} rating={4}/>
                     {/* <Product id={672345} title="OnePlus Buds Z (White)" image="https://images-na.ssl-images-amazon.com/images/I/51vwQzwM%2BZL._SL1500_.jpg" price={41.99} rating={4}/>
                     <Product id={672345} title="OnePlus Buds Z (White)" image="https://images-na.ssl-images-amazon.com/images/I/51vwQzwM%2BZL._SL1500_.jpg" price={41.99} rating={4}/> */}
