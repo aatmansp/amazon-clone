@@ -14,6 +14,7 @@ import Orders from "./Orders";
 import Footer from "./Footer";
 import Address from "./Address";
 import AddAddreess from "./AddAddreess";
+import AddProduct from "./AddProduct";
 
 
 const promise=loadStripe("pk_test_51ItcTYSIk8sIBBS92NdF4NwrpNi4GDg5i4t4I2pOsNr0OuWfs5YMpp5vsmAmug2gZih4L9h6QdodVlLFJCr22TzT00H186xtTS");
@@ -87,6 +88,11 @@ function App() {
           <Route exact path="/addAddress">
             <Header/>
             <AddAddreess/>
+            <Footer/>
+          </Route>
+          <Route exact path="/addProduct">
+            <Header/>
+            <AddProduct/>
             <Footer/>
           </Route>
         </Switch>
