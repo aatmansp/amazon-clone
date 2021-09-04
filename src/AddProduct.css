@@ -23,6 +23,7 @@
     margin-right: -150px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
 }
 
 .addProduct__form h5{
@@ -65,4 +66,8 @@
 .addProduct__form button:hover{
     background: #F7CA00;
     border-color: #F2C200;
+}
+
+.addProduct__SnakbarCloseBtn{
+    margin-top: -20px;
 }
