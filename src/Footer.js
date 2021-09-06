@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import {useHistory} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function Footer() {
 
@@ -42,6 +43,7 @@ function Footer() {
                         <a href="http://www.amazon.in/gp/redirect.html/ref=footer_fb?location=http://www.facebook.com/AmazonIN&token=2075D5EAC7BB214089728E2183FD391706D41E94&6"><span>Facebook</span></a>
                         <a href="http://www.amazon.in/gp/redirect.html/ref=footer_twitter?location=http://twitter.com/AmazonIN&token=A309DFBFCB1E37A808FF531934855DC817F130B6&6"><span>Twitter</span></a>
                         <a href="http://www.amazon.in/gp/redirect.html?location=https://www.instagram.com/amazondotin&token=264882C912E9D005CB1D9B61F12E125D5DF9BFC7&source=standards"><span>Instagram</span></a>
+                        <Link to="/addProduct"><span>Add Product</span></Link>
                     </div>
                 </div>
 
