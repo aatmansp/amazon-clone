@@ -5,6 +5,7 @@ import Product from './Product';
 import {db} from './firebase';
 import { useEffect ,useState} from 'react';
 import { useStateValue } from './StateProvider';
+import {Link} from 'react-router-dom';
 
 
 function Home() {
@@ -78,6 +79,9 @@ function Home() {
                     <Product id={673958} title="OnePlus 9 5G (Arctic Sky, 8GB RAM, 128GB Storage) | Extra INR 3,000 OFF on Exchange | NCEMI upto 12 months" image="https://images-na.ssl-images-amazon.com/images/I/61fy%2Bu9uqPL._SL1500_.jpg" price={579} rating={3}/>
                     <Product id={674849} title="Echo Dot (3rd Gen, Black) Combo with Wipro 9W LED Smart Color Bulb - Smart Home Starter Kit" image="https://images-na.ssl-images-amazon.com/images/I/61EXU8BuGZL._SL1100_.jpg" price={49.99} rating={4}/> */}
                    
+                </div>
+                <div className="home__viewAllLink">
+                    <Link to="/addAddress"><p>View All</p></Link>
                 </div>
             </div>
             

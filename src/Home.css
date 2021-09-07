@@ -28,3 +28,18 @@
     margin-bottom: -295px;
     mask-image: linear-gradient(to bottom, rgb(0, 0, 0,1), rgba(0,0,0,0))
 }
+
+.home__viewAllLink{
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: -5px;
+}
+.home__viewAllLink>a{
+    color:  #007185;
+}
+.home__viewAllLink>a:hover{
+    color: #C7511F;
+    text-decoration: underline;
+}
