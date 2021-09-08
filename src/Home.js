@@ -7,12 +7,9 @@ import { useEffect ,useState} from 'react';
 import { useStateValue } from './StateProvider';
 import {Link} from 'react-router-dom';
 
-
 function Home() {
     const [user]=useStateValue();
     const [products1,setProducts1]=useState([]);
-    // const [products2,setProducts2]=useState([]);
-    // const [products3,setProducts3]=useState([]);
     var ind=0;
 
     useEffect(()=>{
