@@ -78,7 +78,7 @@ function Home() {
                    
                 </div>
                 <div className="home__viewAllLink">
-                    <Link to="/addAddress"><p>View All</p></Link>
+                    <Link to="/allProducts"><p>View All</p></Link>
                 </div>
             </div>
             
