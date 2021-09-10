@@ -25,6 +25,7 @@ function App() {
 
   const [{},dispatch]=useStateValue();
   const [isLoading,setLoading]=useState(true);
+  const [display,setDisplay]=useState("none");
 
 
   useEffect(()=>{
@@ -38,18 +39,26 @@ function App() {
           type:'SET_USER',
           user: authUser
         });
-        setLoading(false);
+        // setLoading(false);
       } else{
         //user logged out
         dispatch({
           type:'SET_USER',
           user:null 
-        })
+        });
+        // setLoading(false);
       }
     })
+    const timeoutID = window.setTimeout(() => {
+      setLoading(false);
+      setDisplay("");
+    }, 2000);
 
+    return () => window.clearTimeout(timeoutID );
     
   },[])
+
+  console.log(isLoading);
 
   return (
     <Router>
@@ -60,96 +69,96 @@ function App() {
               <Circle color="#f0c14b"/>
             </div>}
 
-            {!isLoading &&<div>
+            <div display={display}>
               <Header/>
               <Home/>
               <Footer/>
-            </div>}       
+            </div>   
           </Route>
 
           <Route exact path="/checkout">
           {isLoading && <div className="app__loader">
               <Circle color="#f0c14b"/>
             </div>}
-            {!isLoading &&<div>
+            <div display={display}>
               <Header />
               <Checkout />
               <Footer/>
-            </div>}  
+            </div>
           </Route>
 
           <Route exact path="/login">
           {isLoading && <div className="app__loader">
               <Circle color="#f0c14b"/>
             </div>}
-            {!isLoading &&<div>
+            <div display={display}>
               <Login/>
-              </div>}
+              </div>
           </Route>
 
           <Route exact path="/payment">
           {isLoading && <div className="app__loader">
               <Circle color="#f0c14b"/>
             </div>}
-            {!isLoading &&<div>
+            <div display={display}>
               <Header />
               <Elements stripe={promise}>
                 <Payment />
               </Elements>
               <Footer/>
-            </div>}
+            </div>
           </Route>
 
           <Route exact path="/orders">
           {isLoading && <div className="app__loader">
               <Circle color="#f0c14b"/>
             </div>}
-            {!isLoading &&<div>
+            <div display={display}>
               <Header />
               <Orders/>
               <Footer/>
-            </div>}
+            </div>
           </Route>
 
           <Route exact path="/address">
           {isLoading && <div className="app__loader">
               <Circle color="#f0c14b"/>
             </div>}
-            {!isLoading &&<div>
+            <div display={display}>
               <Header/>
               <Address/>
               <Footer/>
-            </div>}
+            </div>
           </Route>
           <Route exact path="/addAddress">
           {isLoading && <div className="app__loader">
               <Circle color="#f0c14b"/>
             </div>}
-            {!isLoading &&<div>
+            <div display={display}>
               <Header/>
               <AddAddreess/>
               <Footer/>
-            </div>}
+            </div>
           </Route>
           <Route exact path="/addProduct">
           {isLoading && <div className="app__loader">
               <Circle color="#f0c14b"/>
             </div>}
-            {!isLoading &&<div>
+            <div display={display}>
               <Header/>
               <AddProduct/>
               <Footer/>
-            </div>}
+            </div>
           </Route>
           <Route exact path="/allProducts">
           {isLoading && <div className="app__loader">
               <Circle color="#f0c14b"/>
             </div>}
-            {!isLoading &&<div>
+            <div display={display}>
               <Header/>
               <AllProducts/>
               <Footer/>
-            </div>}
+            </div>
           </Route>
         </Switch>
       </div>
