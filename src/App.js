@@ -4,7 +4,7 @@ import Home from "./Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Checkout from "./Checkout";
 import Login from "./Login";
-import React,{useEffect} from 'react';
+import React,{useEffect,useState} from 'react';
 import {auth} from './firebase';
 import { useStateValue } from "./StateProvider";
 import Payment from "./Payment";
@@ -17,12 +17,15 @@ import AddAddreess from "./AddAddreess";
 import AddProduct from "./AddProduct";
 import AllProducts from "./AllProducts";
 
+import {Circle} from 'react-spinners-css';
 
 const promise=loadStripe("pk_test_51ItcTYSIk8sIBBS92NdF4NwrpNi4GDg5i4t4I2pOsNr0OuWfs5YMpp5vsmAmug2gZih4L9h6QdodVlLFJCr22TzT00H186xtTS");
 
 function App() {
 
   const [{},dispatch]=useStateValue();
+  const [isLoading,setLoading]=useState(true);
+
 
   useEffect(()=>{
 
@@ -34,7 +37,8 @@ function App() {
         dispatch({
           type:'SET_USER',
           user: authUser
-        })
+        });
+        setLoading(false);
       } else{
         //user logged out
         dispatch({
@@ -52,54 +56,100 @@ function App() {
       <div className="app">
         <Switch>
           <Route exact path="/">
-            <Header />
-            <Home />
-            <Footer/>
+            {isLoading && <div className="app__loader">
+              <Circle color="#f0c14b"/>
+            </div>}
+
+            {!isLoading &&<div>
+              <Header/>
+              <Home/>
+              <Footer/>
+            </div>}       
           </Route>
 
           <Route exact path="/checkout">
-            <Header />
-            <Checkout />
-            <Footer/>
+          {isLoading && <div className="app__loader">
+              <Circle color="#f0c14b"/>
+            </div>}
+            {!isLoading &&<div>
+              <Header />
+              <Checkout />
+              <Footer/>
+            </div>}  
           </Route>
 
           <Route exact path="/login">
-           <Login/>
+          {isLoading && <div className="app__loader">
+              <Circle color="#f0c14b"/>
+            </div>}
+            {!isLoading &&<div>
+              <Login/>
+              </div>}
           </Route>
 
           <Route exact path="/payment">
-            <Header />
-            <Elements stripe={promise}>
-              <Payment />
-            </Elements>
-            <Footer/>
+          {isLoading && <div className="app__loader">
+              <Circle color="#f0c14b"/>
+            </div>}
+            {!isLoading &&<div>
+              <Header />
+              <Elements stripe={promise}>
+                <Payment />
+              </Elements>
+              <Footer/>
+            </div>}
           </Route>
 
           <Route exact path="/orders">
-            <Header />
-            <Orders/>
-            <Footer/>
+          {isLoading && <div className="app__loader">
+              <Circle color="#f0c14b"/>
+            </div>}
+            {!isLoading &&<div>
+              <Header />
+              <Orders/>
+              <Footer/>
+            </div>}
           </Route>
 
           <Route exact path="/address">
-            <Header/>
-            <Address/>
-            <Footer/>
+          {isLoading && <div className="app__loader">
+              <Circle color="#f0c14b"/>
+            </div>}
+            {!isLoading &&<div>
+              <Header/>
+              <Address/>
+              <Footer/>
+            </div>}
           </Route>
           <Route exact path="/addAddress">
-            <Header/>
-            <AddAddreess/>
-            <Footer/>
+          {isLoading && <div className="app__loader">
+              <Circle color="#f0c14b"/>
+            </div>}
+            {!isLoading &&<div>
+              <Header/>
+              <AddAddreess/>
+              <Footer/>
+            </div>}
           </Route>
           <Route exact path="/addProduct">
-            <Header/>
-            <AddProduct/>
-            <Footer/>
+          {isLoading && <div className="app__loader">
+              <Circle color="#f0c14b"/>
+            </div>}
+            {!isLoading &&<div>
+              <Header/>
+              <AddProduct/>
+              <Footer/>
+            </div>}
           </Route>
           <Route exact path="/allProducts">
-            <Header/>
-            <AllProducts/>
-            <Footer/>
+          {isLoading && <div className="app__loader">
+              <Circle color="#f0c14b"/>
+            </div>}
+            {!isLoading &&<div>
+              <Header/>
+              <AllProducts/>
+              <Footer/>
+            </div>}
           </Route>
         </Switch>
       </div>
