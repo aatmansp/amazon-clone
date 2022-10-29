@@ -14,12 +14,14 @@ function Home() {
 
     useEffect(()=>{
         var productCollection=db.collection('products');
+        // console.log(productCollection);
         var arr1=[];
         productCollection.get()
         .then((snapShot)=>{
-            
+            // console.log(snapShot);
             snapShot.forEach((snap)=>{
                 // console.log(snap.id+" "+JSON.stringify(snap.data()));
+                // console.log(snap.data());
                 arr1.push({
                     id:snap.id,
                     title:snap.data().title,
@@ -31,6 +33,8 @@ function Home() {
             setProducts1(arr1);
             
         });
+        // console.log(productCollection);
+        // console.log(products1);
         
     },[user])
     // console.log(products1);
@@ -77,9 +81,9 @@ function Home() {
                     <Product id={674849} title="Echo Dot (3rd Gen, Black) Combo with Wipro 9W LED Smart Color Bulb - Smart Home Starter Kit" image="https://images-na.ssl-images-amazon.com/images/I/61EXU8BuGZL._SL1100_.jpg" price={49.99} rating={4}/> */}
                    
                 </div>
-                <div className="home__viewAllLink">
+                {/* <div className="home__viewAllLink">
                     <Link to="/allProducts"><p>View All</p></Link>
-                </div>
+                </div> */}
             </div>
             
         </div>

@@ -19,14 +19,74 @@
     margin-top: 18px;
 }
 
+.header__catagoriesText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__catagoriesDropdownContainer{
+    background-color: #f3f3f3;
+    height: 12px;
+    display: flex;
+    z-index: 1;
+    font-size: .8em;
+}
+
+
+.header__catagoriesDropdown{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 1;
+    border-radius: 4px 0px 0px 4px;
+    font-size: .8em;
+    
+    /* border-right: 1px solid #cdcdcd; */
+}
+
+.header__catagoriesDropdown > .MuiSvgIcon-root{
+    margin: -30px;
+    cursor: pointer;
+}
+
+.header__catagoriesDropdown>select{
+    background-color: #f3f3f3;
+    border: none;
+    padding: 9px 0px 8px 8px;
+    border-radius: 4px 0px 0px 4px;
+    outline: none;
+    border-right: 1px solid #cdcdcd;
+    width: auto;
+    /* max-width: 50px; */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.header__catagoriesDropdown>select:focus{
+    width: auto;
+}
+
+.header__catagoriesDropdown>select:hover{
+    background-color: #dadada;
+    cursor: pointer;
+}
+
 .header__search{
     display: flex;
     flex: 1;
     align-items: center;
-    border-radius: 24px;
-    /* border: 1px solid white; */
-    
+    border-radius: 4px;
+    /* border: 1px solid #e77600; */
+    margin-right: 10px;
 }
+
+.header__search:focus-within{
+    /* border: 2px solid #eea341; */
+    box-shadow: 0 0 0 2px #f90, 0 0 0 3px rgb(255 153 0 / 50%);
+}
+
+
 
 .header__searchInput{
     height: 12px;
@@ -36,19 +96,27 @@
     outline: none;
     border-radius: 4px;
     padding-right: 40px;
+    padding-left: 45px;
+    margin-left: 0px;
 }
+
+
     
 
 .header__searchIcon{
     padding: 5px;
     height: 22px !important;
     background-color: #eeb66c;
-    border-radius: 0px     4px      4px           0;
+    border-radius: 0px 4px 4px 0px;
     margin-left: -34px;
     border-right: 0px solid black;
     cursor: pointer;
     color: #111;
-    margin-right: 10px;
+    /* margin-right: 10px; */
+}
+
+.header__searchIcon:hover{
+    background-color: #f3a847;
 }
 
 .header__nav{

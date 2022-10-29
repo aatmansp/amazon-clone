@@ -44,18 +44,35 @@
 }
 
 .product > button{
-    border: 1px solid ;
+    /* Old style */
+    /* border: 1px solid ;
     border-color: #a88734 #9c7e31 #846a29;
     margin-top: 10px;
     color: #111;
     cursor: pointer;
     border-radius: 3px;
     background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
-    box-shadow: 0 1px 0 rgb(255 255 255 / 40%) inset;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 40%) inset; */
+
+    /* New style */
+    cursor: pointer;
+    margin-top: 10px;
+    color: #0F1111;
+    padding: 4px 10px 4px 10px;
+    font-size: 12px;
+    line-height: 19px;
+    border-style: solid;
+    border-width: 1px;
+    background: #FFD814;
+    border-color: #FCD200;
+    border-radius: 3px !important;
+    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
 }
 
 .product > button:hover{
-    background: linear-gradient(to bottom,#ecd6a7,#f0c14b);
+    /* background: linear-gradient(to bottom,#ecd6a7,#f0c14b); */
+    background: #F7CA00;
+    border-color: #F2C200;
 }
 
 /*  */

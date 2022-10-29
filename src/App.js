@@ -31,7 +31,7 @@ function App() {
   useEffect(()=>{
 
     auth.onAuthStateChanged(authUser =>{
-      console.log(authUser)
+      // console.log(authUser)
 
       if(authUser){
         //user is logged in
@@ -58,7 +58,7 @@ function App() {
     
   },[])
 
-  console.log(isLoading);
+  // console.log(isLoading);
 
   return (
     <Router>
