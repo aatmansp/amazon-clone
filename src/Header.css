@@ -34,42 +34,43 @@
 }
 
 
-.header__catagoriesDropdown{
+.header__catagoriesDropdownDiv{
     justify-content: center;
     align-items: center;
     display: flex;
     z-index: 1;
     border-radius: 4px 0px 0px 4px;
-    font-size: .8em;
     
-    /* border-right: 1px solid #cdcdcd; */
 }
 
-.header__catagoriesDropdown > .MuiSvgIcon-root{
-    margin: -30px;
-    cursor: pointer;
-}
-
-.header__catagoriesDropdown>select{
+.header__catagoriesDropdown{
     background-color: #f3f3f3;
     border: none;
-    padding: 9px 0px 8px 8px;
+    /* padding: 0px 0px 0px 8px; */
+    padding: 3px 0px 4px 9px;
     border-radius: 4px 0px 0px 4px;
-    outline: none;
+    outline: none !important;
     border-right: 1px solid #cdcdcd;
-    width: auto;
-    /* max-width: 50px; */
-    -moz-appearance: none;
-    -webkit-appearance: none;
+    width: fit-content;
+    font-size: .85em !important;
 }
 
-.header__catagoriesDropdown>select:focus{
-    width: auto;
+.header__catagoriesDropdownDiv > .MuiInput-underline::before{
+    border-bottom: none !important;
 }
 
-.header__catagoriesDropdown>select:hover{
+.header__catagoriesDropdownDiv > .MuiInput-underline::after{
+    border-bottom: none !important;
+}
+
+.header__catagoriesDropdown:hover{
     background-color: #dadada;
     cursor: pointer;
+    outline: none;
+}
+
+.header__catagoriesDropdown:focus{
+    background-color: #dadada !important;
 }
 
 .header__search{
@@ -77,12 +78,10 @@
     flex: 1;
     align-items: center;
     border-radius: 4px;
-    /* border: 1px solid #e77600; */
     margin-right: 10px;
 }
 
 .header__search:focus-within{
-    /* border: 2px solid #eea341; */
     box-shadow: 0 0 0 2px #f90, 0 0 0 3px rgb(255 153 0 / 50%);
 }
 
@@ -94,9 +93,9 @@
     border:none;
     width: 100%;
     outline: none;
-    border-radius: 4px;
+    border-radius: 0px 4px 4px 0px;
     padding-right: 40px;
-    padding-left: 45px;
+    padding-left: 10px;
     margin-left: 0px;
 }
 
